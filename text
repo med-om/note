@@ -1,0 +1,116 @@
+background: url(img/project-1.jpg) no-repeat center center /cover;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+word-spacing: .5rem;	//	text    text
+letter-spacing: .5rem; 	//	t e x t
+box-shadow: 0 0 3px black;
+transition: .5s;
+
+----------------------------
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+----------------------------
+
+animation-name: animeModal; // Add the name in class or id to animate
+animation-duration: .5s;
+
+@keyframes animeModal {
+   from {
+    top: -300px;
+    opacity: 0;
+   }
+
+   to {
+    top: 50%;
+    opacity: 1;
+   }
+}
+
+----------------------------
+
+.question{
+    position: relative;
+}
+
+.question::after{
+    content: '+';
+    position: absolute;
+    right: -5px;
+}
+
+.question.active::after{
+    content: '-';
+}
+
+----------------------------
+
+
+
+#########################################
+
+const names = [{
+    text1:value1,
+    text2:value2
+},{
+    text1:value3,
+    text2:value4
+}];
+
+names[0].text1 >> give me value1
+names[0].text2 >> give me value2
+names[1].text1 >> give me value3
+names[1].text2 >> give me value4
+
+#########################################
+
+window.addEventListener('click', function(e){
+    if(e.target === modalContainer){
+        modalContainer.style.display = "none";
+    }
+});
+
+console.log(e.target); // <div class="modal-container">...</div>
+
+#########################################
+
+const accordion = document.getElementsByClassName('content-container');
+
+for(let i=0; i<accordion.length; i++){
+
+    accordion[i].addEventListener('click', function(){
+        this.classList.toggle('active');
+    });
+    
+}
+
+#########################################
+
+let timeInterval = null;
+
+function stopWatch(){
+	seconds++;
+	diplayTimer.innerText = `${seconds}`;
+}
+
+timeInterval = window.setInterval(stopWatch, 1000); // one second
+
+clearInterval(timeInterval); // to stop function interval
+
+#########################################
+
+button.addEventListener('click',function(){
+	li.style.textDecoration = "line-through";
+});
+
+button.addEventListener('click',function(){
+	button.parentElement.remove();
+});
+
+#########################################
