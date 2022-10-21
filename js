@@ -59,3 +59,16 @@ button.addEventListener('click',function(){
 });
 
 #########################################
+
+TAG <select> : 
+
+selectElement.addEventListener('change', (event) =>{
+	console.log(event.target.value);
+});
+
+selectElement.addEventListener('change',  function(e){
+
+	console.log(e.target.value);
+});
+
+#########################################
